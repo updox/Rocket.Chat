@@ -45,7 +45,8 @@ Meteor.startup(function() {
 
 				RocketChat.models.Users.create(user);
 
-				Accounts.setPassword(user._id, user._id);
+				const password = 'pw';
+				Accounts.setPassword(user._id, password);
 
 				RocketChat.authz.addUserRoles(user._id, 'admin');
 
